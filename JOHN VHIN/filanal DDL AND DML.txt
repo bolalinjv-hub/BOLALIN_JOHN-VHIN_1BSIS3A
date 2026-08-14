@@ -1,0 +1,73 @@
+CREATE DATABASE bolalinbsis3a
+
+CREATE TABLE MEMBER(
+ MemberID INT PRIMARY KEY,
+ Firstname VARCHAR(50),
+Lastname VARCHAR(50) 
+ );
+ 
+ CREATE TABLE AUTHOR(
+ AuthorID INT PRIMARY KEY,
+ Authorname VARCHAR(50) 
+ );
+ 
+ 
+ CREATE TABLE BOOK(
+ BookID INT PRIMARY KEY,
+ Title VARCHAR(50),
+AuhtorID VARCHAR(50) 
+ );
+ 
+ CREATE TABLE CATEGORY(
+ CategoryID INT PRIMARY KEY,
+ Categoryname VARCHAR(50) 
+ );
+ 
+ CREATE TABLE BARROW(
+ BarrowID INT PRIMARY KEY,
+ MemberID VARCHAR(50),
+BookID VARCHAR(50),
+CategoryID VARCHAR(50),
+BarrowDate VARCHAR(50)
+ );
+ 
+ INSERT INTO MEMBER (MemberID, Firstname, Lastname)
+VALUES ('001', 'JV', 'Bolalin');
+INSERT INTO MEMBER (MemberID, Firstname, Lastname)
+VALUES ('002', 'Brian', 'Cruz');
+
+INSERT INTO AUTHOR (AuhtorID, Authorname)
+VALUES ('001', 'Danica');
+INSERT INTO AUTHOR (AuthorID, Authorname)
+VALUES ('002', 'Rowell');
+
+INSERT INTO BOOK (BookID, Title, AuthorID)
+VALUES ('001', 'Database Basics', '001');
+INSERT INTO BOOK (BookID, Title, AuhtorID)
+VALUES ('002', 'Python Fundamentals', '002');
+
+INSERT INTO CATEGORY (CategoryID, Categoryname)
+VALUES ('001', 'Technology');
+INSERT INTO CATEGORY (CategoryID, Categoryname)
+VALUES ('002', 'Programming');
+
+INSERT INTO BARROW (BarrowID, MemberID, BookID, CategoryID, BarrowDate)
+VALUES ('001', '001', '001' '001', '06/01/2026');
+INSERT INTO BARROW (BarrowID, MemberID, BookID, CategoryID, BarrowDate)
+VALUES ('002', '002', '002', '002', '06/03/2026');
+
+ALTER TABLE member
+ADD username VARCHAR (50);
+ALTER TABLE member
+ADD password VARCHAR (50);
+
+UPDATE member SET username = 'Brian'
+WHERE MemberID = '002';
+UPDATE member SET username = 'Kevin'
+WHERE MemberID = '001';
+
+UPDATE member SET password = 'JV123'
+WHERE MemberID = '001';
+UPDATE member SET password = 'Brian123'
+WHERE MemberID = '002'
+
